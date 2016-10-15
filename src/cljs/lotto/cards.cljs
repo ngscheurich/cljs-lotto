@@ -5,7 +5,7 @@
    :south-wind          "🀁"
    :west-wind           "🀂"
    :north-wind          "🀃"
-   :red-dragon          "🀄"
+   ;; :red-dragon          "🀄"
    :green-dragon        "🀅"
    :white-dragon        "🀆"
    :one-of-characters   "🀇"
