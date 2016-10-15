@@ -1,0 +1,15 @@
+#+TITLE: NoFUN Clojure Workshop Notes
+
+* Reframe framework
+- MVC-like
+- Transpiles to React?
+
+* Hiccup
+- ClojureScript -> HTML
+
+* Terms
+#+BEGIN_SRC clojure
+[1 2 3], [:a :b :c] ;; vectors (integers, keywords)
+{:a 1 :b 2} ;; hash/map
+(def foo 1) ;; defines a global variable
+#+END_SRC

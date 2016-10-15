@@ -3,7 +3,28 @@
             [re-frame.core :as re-frame]
             [lotto.cards :as cards]))
 
+(defn card-face [face]
+  [:div.front
+   [:div.card {:style {:font-size "240px"}}
+    (get cards/mahjong face)]])
+
+(defn card-back []
+  [:div.back
+   [:div.card]])
+
+(defn oriented-card [face]
+  [:div.flip-container
+   [:div.flipper
+    [card-back]
+    [card-face face]]])
+
 (defn main-panel []
-  [:div
-   [:h1 "Welcome to the world's first New Orleans Clojure Workshop!"]
-   [:img {:src "https://raw.githubusercontent.com/lispcast/lotto/initial/resources/public/louisarmstrong.jpg"}]])
+  (let [current-player (re-frame/subscribe [:current-player])]
+       [:div
+        [oriented-card :one-of-circles]
+        [:div.app-state
+          [:dl
+          [:dt "Current Player"]
+          [:dd @current-player]
+          ]
+          [state-viewer]]]))

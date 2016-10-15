@@ -6,3 +6,8 @@
  :app-state
  (fn [db]
    db))
+
+(re-frame/reg-sub
+ :current-player
+ (fn [db]
+   (get db :current-player)))
